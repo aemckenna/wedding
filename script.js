@@ -48,6 +48,11 @@ function setupRevealAnimations() {
 }
 
 /* Wedding Party modal + unlock logic */
+document.addEventListener("DOMContentLoaded", () => {
+  setupWeddingPartyModal();
+  // (plus whatever else you already call here: smooth scroll, nav, etc.)
+});
+
 function setupWeddingPartyModal() {
   const openBtn = document.getElementById("wp-open");
   const modal = document.getElementById("wp-modal");
@@ -81,9 +86,21 @@ function setupWeddingPartyModal() {
 
   function handleCode() {
     if (input.value === WP_CODE) {
-      document.querySelectorAll(".wp-schedule").forEach((el) => {
+      // show wedding-party-only rows inside existing day cards
+      document.querySelectorAll(".wp-only").forEach((el) => {
+        el.style.display = "grid";
+      });
+
+      // show inline extra label (Bridal Party to Peri)
+      document.querySelectorAll(".wp-only-inline").forEach((el) => {
+        el.style.display = "inline-block";
+      });
+
+      // show the Jan 1 wedding-party-only day card
+      document.querySelectorAll(".wp-day-only").forEach((el) => {
         el.style.display = "block";
       });
+
       errorMsg.classList.add("hidden");
       closeModal();
       openBtn.textContent = "Wedding Party Access Granted";
@@ -93,7 +110,6 @@ function setupWeddingPartyModal() {
     }
   }
 }
-
 /* Mobile nav */
 function setupMobileNav() {
   const toggle = document.querySelector(".nav-toggle");
