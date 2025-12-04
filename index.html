@@ -105,105 +105,20 @@
         </div>
 
         <div class="card-grid">
-          <!-- Friday (Public) -->
-          <article class="card">
-            <h3>Friday, January 2</h3>
-            <p class="day-label">Rehearsal Evening</p>
+          <!-- Thursday, January 1 – Wedding Party Only Card -->
+          <article class="card wp-day-only">
+            <h3>Thursday, January 1</h3>
+            <p class="day-label">Wedding party &amp; spouses</p>
             <ul class="timeline">
               <li>
-                <span class="time">6:00 PM</span>
-                <div class="event">
-                  <strong>Rehearsal Dinner</strong>
-                </div>
-              </li>
-
-              <li>
-                <span class="time">8:00 PM</span>
-                <div class="event">
-                  <strong>Worship</strong>
-                </div>
-              </li>
-
-              <li>
-                <span class="time">9:00 PM</span>
-                <div class="event">
-                  <strong>End</strong>
-                </div>
-              </li>
-            </ul>
-
-            <button id="wp-open" class="link-button">
-              Wedding Party Login
-            </button>
-          </article>
-
-          <!-- Saturday (Public) -->
-          <article class="card">
-            <h3>Saturday, January 3</h3>
-            <p class="day-label">Wedding Day</p>
-            <ul class="timeline">
-              <li>
-                <span class="time">10:00 AM</span>
-                <div class="event">
-                  <strong>Ceremony</strong>
-                </div>
-              </li>
-
-              <li>
-                <span class="time">10:30 AM</span>
-                <div class="event">
-                  <strong>Pictures, Coffee &amp; Appetizers</strong>
-                </div>
-              </li>
-
-              <li>
-                <span class="time">11:30 AM</span>
-                <div class="event">
-                  <strong>Lunch</strong>
-                </div>
-              </li>
-
-              <li>
-                <span class="time">12:00 PM</span>
-                <div class="event">
-                  <strong>Speeches</strong>
-                </div>
-              </li>
-
-              <li>
-                <span class="time">12:45 PM</span>
-                <div class="event">
-                  <strong>Cake</strong>
-                </div>
-              </li>
-
-              <li>
-                <span class="time">1:15 PM</span>
-                <div class="event">
-                  <strong>Farewell</strong>
-                </div>
-              </li>
-            </ul>
-            <p class="note">All times are local to Black Mountain, NC.</p>
-          </article>
-
-          <!-- Wedding Party Only Schedule (Hidden Until Access Code) -->
-          <article class="card wp-schedule">
-            <h3>Wedding Party Schedule</h3>
-            <p class="day-label">For wedding party &amp; spouses</p>
-
-            <ul class="timeline">
-              <!-- January 1 -->
-              <li>
-                <span class="time">Jan 1 · 7:30 PM</span>
+                <span class="time">7:30 PM</span>
                 <div class="event">
                   <strong>Escape Room</strong>
                   <span class="tag tag-wp">Wedding Party</span>
                 </div>
               </li>
-
               <li>
-                <span class="time">Jan 1 · 9:00 PM</span>
+                <span class="time">9:00 PM</span>
                 <div class="event">
                   <strong>Dinner at Asher’s Grandparents’ House</strong>
                   <span class="tag tag-wp">Wedding Party</span>
@@ -217,73 +132,144 @@
                   </a>
                 </div>
               </li>
+            </ul>
+          </article>
 
-              <!-- January 2 -->
-              <li>
-                <span class="time">Jan 2 · 10:00 AM</span>
+          <!-- Friday, January 2 – Public card with hidden wedding-party items -->
+          <article class="card">
+            <h3>Friday, January 2</h3>
+            <p class="day-label">Rehearsal Evening</p>
+            <ul class="timeline">
+              <!-- Wedding party only (hidden until code) -->
+              <li class="wp-only">
+                <span class="time">10:00 AM</span>
                 <div class="event">
                   <strong>Bridesmaids to Salt Cave</strong>
                   <span class="tag tag-wp">Wedding Party</span>
                 </div>
               </li>
-
-              <li>
-                <span class="time">Jan 2 · 10:00 AM</span>
+              <li class="wp-only">
+                <span class="time">10:00 AM</span>
                 <div class="event">
                   <strong>Groomsmen Activity</strong>
                   <span class="tag tag-wp">Wedding Party</span>
                 </div>
               </li>
-
-              <li>
-                <span class="time">Jan 2 · 5:00 PM</span>
+              <li class="wp-only">
+                <span class="time">5:00 PM</span>
                 <div class="event">
                   <strong>Rehearsal</strong>
                   <span class="tag tag-wp">Wedding Party</span>
                 </div>
               </li>
 
+              <!-- Public events everyone sees -->
               <li>
-                <span class="time">Jan 2 · 9:00 PM</span>
+                <span class="time">6:00 PM</span>
                 <div class="event">
-                  <strong>Bridal Party to Peri Social House</strong>
-                  <span class="tag tag-wp">Wedding Party</span>
+                  <strong>Rehearsal Dinner</strong>
                 </div>
               </li>
-
-              <!-- January 3 -->
               <li>
-                <span class="time">Jan 3 · 7:00 AM</span>
+                <span class="time">8:00 PM</span>
+                <div class="event">
+                  <strong>Worship</strong>
+                </div>
+              </li>
+              <li>
+                <span class="time">9:00 PM</span>
+                <div class="event">
+                  <strong>End</strong>
+                  <!-- Wedding-party extra detail at 9:00 -->
+                  <span class="tag tag-wp wp-only-inline"
+                    >Bridal Party to Peri Social House</span
+                  >
+                </div>
+              </li>
+            </ul>
+
+            <button id="wp-open" class="link-button">
+              Wedding Party Login
+            </button>
+          </article>
+
+          <!-- Saturday, January 3 – Public card with hidden wedding-party items -->
+          <article class="card">
+            <h3>Saturday, January 3</h3>
+            <p class="day-label">Wedding Day</p>
+            <ul class="timeline">
+              <!-- Wedding party only (hidden until code) -->
+              <li class="wp-only">
+                <span class="time">7:00 AM</span>
                 <div class="event">
                   <strong>Get Ready &amp; Breakfast</strong>
                   <span class="tag tag-wp">Wedding Party</span>
                 </div>
               </li>
-
-              <li>
-                <span class="time">Jan 3 · 9:00 AM</span>
+              <li class="wp-only">
+                <span class="time">9:00 AM</span>
                 <div class="event">
                   <strong>Groomsmen Arrive &amp; First Looks</strong>
                   <span class="tag tag-wp">Wedding Party</span>
                 </div>
               </li>
 
+              <!-- Public events everyone sees -->
               <li>
-                <span class="time">Jan 3 · 1:30 PM</span>
+                <span class="time">10:00 AM</span>
+                <div class="event">
+                  <strong>Ceremony</strong>
+                </div>
+              </li>
+              <li>
+                <span class="time">10:30 AM</span>
+                <div class="event">
+                  <strong>Pictures, Coffee &amp; Appetizers</strong>
+                </div>
+              </li>
+              <li>
+                <span class="time">11:30 AM</span>
+                <div class="event">
+                  <strong>Lunch</strong>
+                </div>
+              </li>
+              <li>
+                <span class="time">12:00 PM</span>
+                <div class="event">
+                  <strong>Speeches</strong>
+                </div>
+              </li>
+              <li>
+                <span class="time">12:45 PM</span>
+                <div class="event">
+                  <strong>Cake</strong>
+                </div>
+              </li>
+              <li>
+                <span class="time">1:15 PM</span>
+                <div class="event">
+                  <strong>Farewell</strong>
+                </div>
+              </li>
+
+              <!-- Wedding party only (hidden until code) -->
+              <li class="wp-only">
+                <span class="time">1:30 PM</span>
                 <div class="event">
                   <strong>Cleanup</strong>
                   <span class="tag tag-wp">Wedding Party</span>
                 </div>
               </li>
-
-              <li>
-                <span class="time">Jan 3 · 3:00 PM</span>
+              <li class="wp-only">
+                <span class="time">3:00 PM</span>
                 <div class="event">
                   <strong>Leave</strong>
                   <span class="tag tag-wp">Wedding Party</span>
                 </div>
               </li>
             </ul>
+
+            <p class="note">All times are local to Black Mountain, NC.</p>
           </article>
         </div>
       </div>
