@@ -4,112 +4,370 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Asher & Lindsey — Wedding</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="styles.css" />
     <script defer src="script.js"></script>
   </head>
 
   <body>
-    <!-- Hero Section -->
-    <header class="hero">
-      <div class="overlay"></div>
-      <div class="hero-content fade-in">
-        <h1>Asher & Lindsey</h1>
-        <p>Saturday, January 3, 2026 • Black Mountain, North Carolina</p>
+    <!-- Top Navigation -->
+    <header class="top-nav">
+      <div class="nav-inner">
+        <a href="#hero" class="brand">
+          <span class="brand-mark">A & L</span>
+        </a>
+        <nav class="nav-links">
+          <a href="#welcome">Welcome</a>
+          <a href="#itinerary">Itinerary</a>
+          <a href="#travel">Travel</a>
+          <a href="#lodging">Lodging</a>
+          <a href="#photos">Photos</a>
+          <a href="#honeyfund">Honeyfund</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </header>
 
+    <!-- Hero with Video Cover -->
+    <section id="hero" class="hero">
+      <!-- Replace video.mp4 with your real video file or external URL -->
+      <video class="hero-video" autoplay muted loop playsinline poster="">
+        <source src="video.mp4" type="video/mp4" />
+        <!-- Fallback for browsers that can't play video -->
+      </video>
+
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content reveal">
+        <p class="eyebrow">Black Mountain, North Carolina</p>
+        <h1>Asher &amp; Lindsey</h1>
+        <p class="hero-date">Saturday, January 3, 2026</p>
+        <div class="hero-cta">
+          <button class="btn primary" data-scroll-to="#itinerary">
+            View Itinerary
+          </button>
+          <button class="btn ghost" data-scroll-to="#travel">
+            Travel Info
+          </button>
+        </div>
+        <p class="hero-sub">
+          A cozy winter morning, mountains in the distance, and a room full of
+          our favorite people.
+        </p>
+      </div>
+
+      <div class="scroll-indicator">
+        <span>Scroll</span>
+        <div class="arrow"></div>
+      </div>
+    </section>
+
     <!-- Welcome -->
-    <section class="section fade-in">
-      <h2>Welcome</h2>
-      <p>
-        We’re so excited to celebrate with you in January. On this site you’ll
-        find the itinerary, travel info, and lodging details.
-      </p>
+    <section id="welcome" class="section reveal">
+      <div class="section-inner two-col">
+        <div>
+          <h2>We can’t wait to celebrate with you</h2>
+          <p>
+            We’re so excited to celebrate with you in January. On this site
+            you’ll find the itinerary, travel info, and lodging details so you
+            can relax and enjoy the weekend with us.
+          </p>
+          <p>
+            Whether you’re coming from across town or across the country, thank
+            you for being a part of our story.
+          </p>
+        </div>
+        <aside class="info-card">
+          <h3>The Details</h3>
+          <p>
+            <strong>Ceremony</strong><br />
+            Saturday, January 3, 2026<br />
+            10:00 AM
+          </p>
+          <p>
+            <strong>Venue</strong><br />
+            Peri Social House<br />
+            406 W State St<br />
+            Black Mountain, NC 28711
+          </p>
+        </aside>
+      </div>
     </section>
 
     <!-- Itinerary -->
-    <section class="section fade-in" id="itinerary">
-      <h2>Itinerary</h2>
+    <section id="itinerary" class="section reveal">
+      <div class="section-inner">
+        <div class="section-header">
+          <h2>Weekend Itinerary</h2>
+          <p>
+            Here’s a snapshot of the weekend. Exact timing is subject to a
+            little bit of wedding magic.
+          </p>
+        </div>
 
-      <div class="day">
-        <h3>Friday, January 2</h3>
-        <ul>
-          <!-- Visible to all -->
-          <li><strong>5:00 PM</strong> — Rehearsal (Wedding Party)</li>
-          <li><strong>6:00 PM</strong> — Rehearsal Dinner</li>
+        <div class="itinerary-grid">
+          <!-- Friday -->
+          <article class="card">
+            <h3>Friday, January 2</h3>
+            <p class="day-label">Rehearsal Evening</p>
+            <ul class="timeline">
+              <li>
+                <span class="time">5:00 PM</span>
+                <div class="event">
+                  <strong>Rehearsal</strong>
+                  <span class="tag tag-wp">Wedding Party</span>
+                </div>
+              </li>
+              <li>
+                <span class="time">6:00 PM</span>
+                <div class="event">
+                  <strong>Rehearsal Dinner</strong>
+                </div>
+              </li>
+              <li class="wp-only">
+                <span class="time">8:00 PM</span>
+                <div class="event">
+                  <strong>Worship</strong>
+                  <span class="tag tag-wp">Wedding Party</span>
+                </div>
+              </li>
+              <li class="wp-only">
+                <span class="time">9:00 PM</span>
+                <div class="event">
+                  <strong>Bridal Party to Peri Social House</strong>
+                  <span class="tag tag-wp">Wedding Party</span>
+                </div>
+              </li>
+            </ul>
+            <button id="wp-open" class="link-button">
+              Wedding Party Access
+            </button>
+          </article>
 
-          <!-- Hidden until code is entered -->
-          <li class="wp-only"><strong>8:00 PM</strong> — Worship</li>
-          <li class="wp-only">
-            <strong>9:00 PM</strong> — Bridal Party to Peri Social House
-          </li>
-        </ul>
-      </div>
-
-      <div class="day">
-        <h3>Saturday, January 3</h3>
-        <ul>
-          <li><strong>10:00 AM</strong> — Ceremony</li>
-          <li><strong>10:30 AM</strong> — Photos, Coffee & Appetizers</li>
-          <li><strong>11:25 AM</strong> — Reception & Prayer</li>
-          <li><strong>11:30 AM</strong> — Lunch</li>
-          <li><strong>12:00 PM</strong> — Speeches</li>
-          <li><strong>12:45 PM</strong> — Cake</li>
-          <li><strong>1:15 PM</strong> — Farewell</li>
-        </ul>
-      </div>
-
-      <button id="wp-login-btn" class="btn">Wedding Party Login</button>
-
-      <div id="wp-login-box" class="login-box hidden">
-        <p>Enter Access Code:</p>
-        <input type="password" id="wp-code" placeholder="••••••••" />
-        <button id="wp-submit" class="btn small">Submit</button>
-        <p id="wp-error" class="error hidden">Incorrect code. Try again.</p>
+          <!-- Saturday -->
+          <article class="card">
+            <h3>Saturday, January 3</h3>
+            <p class="day-label">Wedding Day</p>
+            <ul class="timeline">
+              <li>
+                <span class="time">10:00 AM</span>
+                <div class="event">
+                  <strong>Ceremony</strong>
+                </div>
+              </li>
+              <li>
+                <span class="time">10:30 AM</span>
+                <div class="event">
+                  <strong>Photos, Coffee &amp; Appetizers</strong>
+                </div>
+              </li>
+              <li>
+                <span class="time">11:25 AM</span>
+                <div class="event">
+                  <strong>Reception &amp; Prayer</strong>
+                </div>
+              </li>
+              <li>
+                <span class="time">11:30 AM</span>
+                <div class="event">
+                  <strong>Lunch</strong>
+                </div>
+              </li>
+              <li>
+                <span class="time">12:00 PM</span>
+                <div class="event">
+                  <strong>Speeches</strong>
+                </div>
+              </li>
+              <li>
+                <span class="time">12:45 PM</span>
+                <div class="event">
+                  <strong>Cake</strong>
+                </div>
+              </li>
+              <li>
+                <span class="time">1:15 PM</span>
+                <div class="event">
+                  <strong>Farewell</strong>
+                </div>
+              </li>
+            </ul>
+            <p class="note">All times are local to Black Mountain, NC.</p>
+          </article>
+        </div>
       </div>
     </section>
 
     <!-- Lodging -->
-    <section class="section fade-in" id="lodging">
-      <h2>Lodging</h2>
-      <p><strong>Hotel:</strong> Cambria Asheville</p>
-      <p><strong>Room Block:</strong> Link coming soon</p>
+    <section id="lodging" class="section reveal">
+      <div class="section-inner two-col">
+        <div>
+          <h2>Lodging</h2>
+          <p>
+            We’re arranging a room block so everyone has a cozy place to land
+            after celebrating.
+          </p>
+          <p>
+            <strong>Hotel:</strong> Cambria Asheville<br />
+            <span class="soft">
+              Room block details & booking link coming soon.
+            </span>
+          </p>
+        </div>
+        <aside class="info-card">
+          <h3>Pro Tip</h3>
+          <p>
+            Black Mountain and Asheville have lots of charming Airbnbs, cabins,
+            and boutique stays. If you prefer something unique, feel free to
+            explore those options too.
+          </p>
+        </aside>
+      </div>
     </section>
 
-    <!-- Travel -->
-    <section class="section fade-in" id="travel">
-      <h2>Travel & Logistics</h2>
-      <p>
-        <strong>Nearest Airport:</strong> Asheville Regional Airport (AVL),
-        30–35 minutes away.
-      </p>
-      <p>
-        <strong>Dress Code:</strong> Cocktail attire for the rehearsal, formal
-        attire for the wedding.
-      </p>
+    <!-- Travel & Dress Code -->
+    <section id="travel" class="section reveal">
+      <div class="section-inner two-col">
+        <div>
+          <h2>Travel</h2>
+          <p>
+            <strong>Nearest Airport:</strong><br />
+            Asheville Regional Airport (AVL), approximately 30–35 minutes from
+            Black Mountain.
+          </p>
+          <p>
+            Local mountain roads can be scenic, especially in winter. Plan a
+            little extra time if you’re driving up in the morning.
+          </p>
+        </div>
+        <aside class="info-card">
+          <h3>Dress Code</h3>
+          <p>
+            <strong>Rehearsal:</strong> Cocktail attire<br />
+            <strong>Wedding:</strong> Formal attire
+          </p>
+          <p class="soft">
+            Think “elevated and comfortable” — something you can celebrate, hug,
+            and dance in.
+          </p>
+        </aside>
+      </div>
     </section>
 
-    <!-- Images -->
-    <section class="section fade-in" id="photos">
-      <h2>Photos</h2>
-      <div class="photo-grid">
-        <div class="photo placeholder">Photo of us here</div>
-        <div class="photo placeholder">Photo of us here</div>
-        <div class="photo placeholder">Venue photo here</div>
+    <!-- Photos / Placeholders -->
+    <section id="photos" class="section reveal">
+      <div class="section-inner">
+        <div class="section-header">
+          <h2>Photos &amp; Moments</h2>
+          <p>
+            We’ll add photos here as we get closer — for now, imagine mountain
+            views, twinkly lights, and lots of laughter.
+          </p>
+        </div>
+
+        <div class="photo-grid">
+          <div class="photo-card">
+            <div class="photo-placeholder">Photo of us here</div>
+            <p class="caption">Engagement or favorite photo of us.</p>
+          </div>
+          <div class="photo-card">
+            <div class="photo-placeholder">Photo of us here</div>
+            <p class="caption">Another moment that feels like “us.”</p>
+          </div>
+          <div class="photo-card">
+            <div class="photo-placeholder">Venue photo here</div>
+            <p class="caption">A glimpse of Peri Social House.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Honeyfund (Honeymoon Hint) -->
+    <section id="honeyfund" class="section reveal">
+      <div class="section-inner two-col">
+        <div>
+          <h2>Honeyfund</h2>
+          <p>
+            After the wedding, we’re sneaking away for a surprise honeymoon —
+            somewhere that mixes adventure, beautiful views, and slow mornings
+            with good coffee.
+          </p>
+          <p>
+            If you’d like to help send us off, we’ve created a Honeyfund in
+            place of traditional gifts.
+          </p>
+          <a
+            href="https://www.honeyfund.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn primary"
+          >
+            Visit Our Honeyfund
+          </a>
+          <p class="soft">
+            We’ll share photos and stories when we’re back… destination revealed
+            then. 😉
+          </p>
+        </div>
+        <aside class="info-card">
+          <h3>A Little Hint</h3>
+          <p>
+            Think mountains. Think cozy. Think “we packed both hiking shoes and
+            something a little dressy.”
+          </p>
+          <p class="soft">But that’s all we’re saying for now.</p>
+        </aside>
       </div>
     </section>
 
     <!-- Contact -->
-    <section class="section fade-in" id="contact">
-      <h2>Contact</h2>
-      <p>
-        For questions, contact the couple or a member of the wedding party.
-        Contact details coming soon.
-      </p>
+    <section id="contact" class="section reveal">
+      <div class="section-inner">
+        <h2>Contact</h2>
+        <p>
+          For questions about the weekend, travel, or logistics, please reach
+          out to the couple or a member of the wedding party.
+        </p>
+        <p class="soft">
+          Contact details will be added here closer to the date.
+        </p>
+      </div>
     </section>
 
-    <footer>
-      <p>© 2026 Asher & Lindsey</p>
+    <footer class="footer">
+      <p>© 2026 Asher &amp; Lindsey</p>
     </footer>
+
+    <!-- Wedding Party Modal -->
+    <div id="wp-modal" class="modal">
+      <div class="modal-content">
+        <button class="modal-close" aria-label="Close Wedding Party access">
+          ×
+        </button>
+        <h3>Wedding Party Access</h3>
+        <p>Enter the access code to view wedding-party-only events.</p>
+        <input
+          type="password"
+          id="wp-code"
+          class="input"
+          placeholder="Access code"
+        />
+        <button id="wp-submit" class="btn primary small">Unlock</button>
+        <p id="wp-error" class="error-message hidden">
+          Incorrect code. Please try again.
+        </p>
+      </div>
+    </div>
   </body>
 </html>
