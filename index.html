@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Asher & Lindsey — Wedding</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+  </head>
+
+  <body>
+    <!-- Hero Section -->
+    <header class="hero">
+      <div class="overlay"></div>
+      <div class="hero-content fade-in">
+        <h1>Asher & Lindsey</h1>
+        <p>Saturday, January 3, 2026 • Black Mountain, North Carolina</p>
+      </div>
+    </header>
+
+    <!-- Welcome -->
+    <section class="section fade-in">
+      <h2>Welcome</h2>
+      <p>
+        We’re so excited to celebrate with you in January. On this site you’ll
+        find the itinerary, travel info, and lodging details.
+      </p>
+    </section>
+
+    <!-- Itinerary -->
+    <section class="section fade-in" id="itinerary">
+      <h2>Itinerary</h2>
+
+      <div class="day">
+        <h3>Friday, January 2</h3>
+        <ul>
+          <!-- Visible to all -->
+          <li><strong>5:00 PM</strong> — Rehearsal (Wedding Party)</li>
+          <li><strong>6:00 PM</strong> — Rehearsal Dinner</li>
+
+          <!-- Hidden until code is entered -->
+          <li class="wp-only"><strong>8:00 PM</strong> — Worship</li>
+          <li class="wp-only">
+            <strong>9:00 PM</strong> — Bridal Party to Peri Social House
+          </li>
+        </ul>
+      </div>
+
+      <div class="day">
+        <h3>Saturday, January 3</h3>
+        <ul>
+          <li><strong>10:00 AM</strong> — Ceremony</li>
+          <li><strong>10:30 AM</strong> — Photos, Coffee & Appetizers</li>
+          <li><strong>11:25 AM</strong> — Reception & Prayer</li>
+          <li><strong>11:30 AM</strong> — Lunch</li>
+          <li><strong>12:00 PM</strong> — Speeches</li>
+          <li><strong>12:45 PM</strong> — Cake</li>
+          <li><strong>1:15 PM</strong> — Farewell</li>
+        </ul>
+      </div>
+
+      <button id="wp-login-btn" class="btn">Wedding Party Login</button>
+
+      <div id="wp-login-box" class="login-box hidden">
+        <p>Enter Access Code:</p>
+        <input type="password" id="wp-code" placeholder="••••••••" />
+        <button id="wp-submit" class="btn small">Submit</button>
+        <p id="wp-error" class="error hidden">Incorrect code. Try again.</p>
+      </div>
+    </section>
+
+    <!-- Lodging -->
+    <section class="section fade-in" id="lodging">
+      <h2>Lodging</h2>
+      <p><strong>Hotel:</strong> Cambria Asheville</p>
+      <p><strong>Room Block:</strong> Link coming soon</p>
+    </section>
+
+    <!-- Travel -->
+    <section class="section fade-in" id="travel">
+      <h2>Travel & Logistics</h2>
+      <p>
+        <strong>Nearest Airport:</strong> Asheville Regional Airport (AVL),
+        30–35 minutes away.
+      </p>
+      <p>
+        <strong>Dress Code:</strong> Cocktail attire for the rehearsal, formal
+        attire for the wedding.
+      </p>
+    </section>
+
+    <!-- Images -->
+    <section class="section fade-in" id="photos">
+      <h2>Photos</h2>
+      <div class="photo-grid">
+        <div class="photo placeholder">Photo of us here</div>
+        <div class="photo placeholder">Photo of us here</div>
+        <div class="photo placeholder">Venue photo here</div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section fade-in" id="contact">
+      <h2>Contact</h2>
+      <p>
+        For questions, contact the couple or a member of the wedding party.
+        Contact details coming soon.
+      </p>
+    </section>
+
+    <footer>
+      <p>© 2026 Asher & Lindsey</p>
+    </footer>
+  </body>
+</html>
