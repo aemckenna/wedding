@@ -1,5 +1,4 @@
-// Access code for wedding party events
-const WP_CODE = "LP2026"; // change if you want
+const WP_CODE = "LP2026"; // wedding party access code
 
 document.addEventListener("DOMContentLoaded", () => {
   setupSmoothScroll();
@@ -8,36 +7,29 @@ document.addEventListener("DOMContentLoaded", () => {
   setupMobileNav();
 });
 
-/* -------------------------
-   Smooth scrolling
-------------------------- */
+/* Smooth scrolling for nav + hero buttons */
 function setupSmoothScroll() {
-  const scrollTriggers = document.querySelectorAll(
-    'a[href^="#"], [data-scroll-to]'
-  );
+  const triggers = document.querySelectorAll('a[href^="#"], [data-scroll-to]');
 
-  scrollTriggers.forEach((trigger) => {
-    trigger.addEventListener("click", (e) => {
-      const targetSelector =
-        trigger.getAttribute("href") || trigger.dataset.scrollTo;
+  triggers.forEach((el) => {
+    el.addEventListener("click", (e) => {
+      const targetSelector = el.getAttribute("href") || el.dataset.scrollTo;
       if (!targetSelector || !targetSelector.startsWith("#")) return;
 
-      const targetEl = document.querySelector(targetSelector);
-      if (!targetEl) return;
+      const target = document.querySelector(targetSelector);
+      if (!target) return;
 
       e.preventDefault();
-      targetEl.scrollIntoView({ behavior: "smooth", block: "start" });
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
     });
   });
 }
 
-/* -------------------------
-   Reveal on scroll
-------------------------- */
+/* Reveal on scroll */
 function setupRevealAnimations() {
-  const revealElements = document.querySelectorAll(".reveal");
-  if (!("IntersectionObserver" in window) || revealElements.length === 0) {
-    revealElements.forEach((el) => el.classList.add("in-view"));
+  const revealEls = document.querySelectorAll(".reveal");
+  if (!("IntersectionObserver" in window) || revealEls.length === 0) {
+    revealEls.forEach((el) => el.classList.add("in-view"));
     return;
   }
 
@@ -53,68 +45,57 @@ function setupRevealAnimations() {
     { threshold: 0.2 }
   );
 
-  revealElements.forEach((el) => observer.observe(el));
+  revealEls.forEach((el) => observer.observe(el));
 }
 
-/* -------------------------
-   Wedding Party modal + code
-------------------------- */
+/* Wedding Party modal + unlock logic */
 function setupWeddingPartyModal() {
-  const wpOpenBtn = document.getElementById("wp-open");
+  const openBtn = document.getElementById("wp-open");
   const modal = document.getElementById("wp-modal");
   const closeBtn = modal?.querySelector(".modal-close");
   const submitBtn = document.getElementById("wp-submit");
   const input = document.getElementById("wp-code");
   const errorMsg = document.getElementById("wp-error");
 
-  if (!wpOpenBtn || !modal || !closeBtn || !submitBtn || !input || !errorMsg) {
+  if (!openBtn || !modal || !closeBtn || !submitBtn || !input || !errorMsg) {
     return;
   }
 
-  wpOpenBtn.addEventListener("click", () => {
+  openBtn.addEventListener("click", () => {
     modal.classList.add("open");
     errorMsg.classList.add("hidden");
     input.value = "";
     input.focus();
   });
 
-  const closeModal = () => {
-    modal.classList.remove("open");
-  };
+  const closeModal = () => modal.classList.remove("open");
 
   closeBtn.addEventListener("click", closeModal);
-
   modal.addEventListener("click", (e) => {
     if (e.target === modal) closeModal();
   });
 
-  submitBtn.addEventListener("click", () => handleCode());
-
+  submitBtn.addEventListener("click", handleCode);
   input.addEventListener("keydown", (e) => {
-    if (e.key === "Enter") {
-      handleCode();
-    }
+    if (e.key === "Enter") handleCode();
   });
 
   function handleCode() {
     if (input.value === WP_CODE) {
       document.querySelectorAll(".wp-only").forEach((el) => {
-        // Display timeline items as grid rows again
         el.style.display = "grid";
       });
       errorMsg.classList.add("hidden");
       closeModal();
-      wpOpenBtn.textContent = "Wedding Party Access Granted";
-      wpOpenBtn.disabled = true;
+      openBtn.textContent = "Wedding Party Access Granted";
+      openBtn.disabled = true;
     } else {
       errorMsg.classList.remove("hidden");
     }
   }
 }
 
-/* -------------------------
-   Mobile navigation
-------------------------- */
+/* Mobile nav */
 function setupMobileNav() {
   const toggle = document.querySelector(".nav-toggle");
   const navLinks = document.querySelector(".nav-links");
@@ -124,7 +105,6 @@ function setupMobileNav() {
     navLinks.classList.toggle("open");
   });
 
-  // Close on nav click (mobile)
   navLinks.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => {
       navLinks.classList.remove("open");

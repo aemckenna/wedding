@@ -18,19 +18,17 @@
   </head>
 
   <body>
-    <!-- Top Navigation -->
+    <!-- Simple top nav -->
     <header class="top-nav">
       <div class="nav-inner">
         <a href="#hero" class="brand">
-          <span class="brand-mark">A & L</span>
+          <span class="brand-mark">Asher &amp; Lindsey</span>
         </a>
         <nav class="nav-links">
-          <a href="#welcome">Welcome</a>
-          <a href="#itinerary">Itinerary</a>
-          <a href="#travel">Travel</a>
-          <a href="#lodging">Lodging</a>
-          <a href="#photos">Photos</a>
+          <a href="#weekend">Weekend</a>
+          <a href="#travel-lodging">Travel &amp; Stay</a>
           <a href="#honeyfund">Honeyfund</a>
+          <a href="#photos">Photos</a>
           <a href="#contact">Contact</a>
         </nav>
         <button class="nav-toggle" aria-label="Toggle navigation">
@@ -39,12 +37,11 @@
       </div>
     </header>
 
-    <!-- Hero with Video Cover -->
+    <!-- HERO: Video -->
     <section id="hero" class="hero">
-      <!-- Replace video.mp4 with your real video file or external URL -->
+      <!-- Put engagement-reel.mp4 in the same folder as index.html -->
       <video class="hero-video" autoplay muted loop playsinline poster="">
-        <source src="video.mp4" type="video/mp4" />
-        <!-- Fallback for browsers that can't play video -->
+        <source src="engagement-reel.mp4" type="video/mp4" />
       </video>
 
       <div class="hero-overlay"></div>
@@ -52,19 +49,19 @@
       <div class="hero-content reveal">
         <p class="eyebrow">Black Mountain, North Carolina</p>
         <h1>Asher &amp; Lindsey</h1>
-        <p class="hero-date">Saturday, January 3, 2026</p>
-        <div class="hero-cta">
-          <button class="btn primary" data-scroll-to="#itinerary">
-            View Itinerary
-          </button>
-          <button class="btn ghost" data-scroll-to="#travel">
-            Travel Info
-          </button>
-        </div>
+        <p class="hero-date">Saturday, January 3, 2026 &bull; 10:00 AM</p>
         <p class="hero-sub">
-          A cozy winter morning, mountains in the distance, and a room full of
+          A winter morning in the mountains, coffee in hand, and a room full of
           our favorite people.
         </p>
+        <div class="hero-cta">
+          <button class="btn primary" data-scroll-to="#weekend">
+            View the Weekend
+          </button>
+          <button class="btn ghost" data-scroll-to="#travel-lodging">
+            Travel &amp; Stay
+          </button>
+        </div>
       </div>
 
       <div class="scroll-indicator">
@@ -73,51 +70,42 @@
       </div>
     </section>
 
-    <!-- Welcome -->
-    <section id="welcome" class="section reveal">
-      <div class="section-inner two-col">
-        <div>
-          <h2>We can’t wait to celebrate with you</h2>
-          <p>
-            We’re so excited to celebrate with you in January. On this site
-            you’ll find the itinerary, travel info, and lodging details so you
-            can relax and enjoy the weekend with us.
-          </p>
-          <p>
-            Whether you’re coming from across town or across the country, thank
-            you for being a part of our story.
-          </p>
+    <!-- AT A GLANCE STRIP -->
+    <section class="section section-soft reveal">
+      <div class="section-inner">
+        <div class="glance-grid">
+          <div class="glance-card">
+            <h3>Date &amp; Time</h3>
+            <p>Saturday, January 3, 2026</p>
+            <p class="soft">Ceremony begins at 10:00 AM</p>
+          </div>
+          <div class="glance-card">
+            <h3>Location</h3>
+            <p>Peri Social House</p>
+            <p class="soft">406 W State St, Black Mountain, NC 28711</p>
+          </div>
+          <div class="glance-card">
+            <h3>Dress Code</h3>
+            <p>Rehearsal: Cocktail</p>
+            <p class="soft">Wedding: Formal</p>
+          </div>
         </div>
-        <aside class="info-card">
-          <h3>The Details</h3>
-          <p>
-            <strong>Ceremony</strong><br />
-            Saturday, January 3, 2026<br />
-            10:00 AM
-          </p>
-          <p>
-            <strong>Venue</strong><br />
-            Peri Social House<br />
-            406 W State St<br />
-            Black Mountain, NC 28711
-          </p>
-        </aside>
       </div>
     </section>
 
-    <!-- Itinerary -->
-    <section id="itinerary" class="section reveal">
+    <!-- WEEKEND SECTION -->
+    <section id="weekend" class="section reveal">
       <div class="section-inner">
-        <div class="section-header">
-          <h2>Weekend Itinerary</h2>
+        <div class="section-header center">
+          <h2>The Weekend</h2>
           <p>
-            Here’s a snapshot of the weekend. Exact timing is subject to a
-            little bit of wedding magic.
+            Here’s how the weekend will flow. Wedding-party-only details stay
+            tucked away unless you have the access code.
           </p>
         </div>
 
-        <div class="itinerary-grid">
-          <!-- Friday -->
+        <div class="card-grid">
+          <!-- Friday card -->
           <article class="card">
             <h3>Friday, January 2</h3>
             <p class="day-label">Rehearsal Evening</p>
@@ -151,11 +139,11 @@
               </li>
             </ul>
             <button id="wp-open" class="link-button">
-              Wedding Party Access
+              Wedding Party Login
             </button>
           </article>
 
-          <!-- Saturday -->
+          <!-- Saturday card -->
           <article class="card">
             <h3>Saturday, January 3</h3>
             <p class="day-label">Wedding Day</p>
@@ -203,79 +191,113 @@
                 </div>
               </li>
             </ul>
-            <p class="note">All times are local to Black Mountain, NC.</p>
+            <p class="note">All times local to Black Mountain, NC.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Lodging -->
-    <section id="lodging" class="section reveal">
-      <div class="section-inner two-col">
-        <div>
-          <h2>Lodging</h2>
-          <p>
-            We’re arranging a room block so everyone has a cozy place to land
-            after celebrating.
-          </p>
-          <p>
-            <strong>Hotel:</strong> Cambria Asheville<br />
-            <span class="soft">
-              Room block details & booking link coming soon.
-            </span>
-          </p>
-        </div>
-        <aside class="info-card">
-          <h3>Pro Tip</h3>
-          <p>
-            Black Mountain and Asheville have lots of charming Airbnbs, cabins,
-            and boutique stays. If you prefer something unique, feel free to
-            explore those options too.
-          </p>
-        </aside>
-      </div>
-    </section>
-
-    <!-- Travel & Dress Code -->
-    <section id="travel" class="section reveal">
-      <div class="section-inner two-col">
-        <div>
-          <h2>Travel</h2>
-          <p>
-            <strong>Nearest Airport:</strong><br />
-            Asheville Regional Airport (AVL), approximately 30–35 minutes from
-            Black Mountain.
-          </p>
-          <p>
-            Local mountain roads can be scenic, especially in winter. Plan a
-            little extra time if you’re driving up in the morning.
-          </p>
-        </div>
-        <aside class="info-card">
-          <h3>Dress Code</h3>
-          <p>
-            <strong>Rehearsal:</strong> Cocktail attire<br />
-            <strong>Wedding:</strong> Formal attire
-          </p>
-          <p class="soft">
-            Think “elevated and comfortable” — something you can celebrate, hug,
-            and dance in.
-          </p>
-        </aside>
-      </div>
-    </section>
-
-    <!-- Photos / Placeholders -->
-    <section id="photos" class="section reveal">
+    <!-- TRAVEL + LODGING -->
+    <section id="travel-lodging" class="section section-soft reveal">
       <div class="section-inner">
-        <div class="section-header">
-          <h2>Photos &amp; Moments</h2>
+        <div class="section-header center">
+          <h2>Travel &amp; Stay</h2>
           <p>
-            We’ll add photos here as we get closer — for now, imagine mountain
-            views, twinkly lights, and lots of laughter.
+            A little help getting to the mountains and settling in once you’re
+            here.
           </p>
         </div>
 
+        <div class="two-col">
+          <article class="card subtle">
+            <h3>Travel</h3>
+            <p>
+              <strong>Nearest Airport:</strong><br />
+              Asheville Regional Airport (AVL)
+            </p>
+            <p class="soft">
+              About 30–35 minutes from Black Mountain. Mountain roads can be
+              scenic, so build in a little wiggle room.
+            </p>
+          </article>
+
+          <article class="card subtle">
+            <h3>Lodging</h3>
+            <p>
+              <strong>Primary Hotel:</strong><br />
+              Cambria Asheville
+            </p>
+            <p class="soft">
+              Room block details &amp; booking link coming soon.
+            </p>
+            <p class="soft">
+              There are also cozy cabins and Airbnbs nearby if you’d like a
+              little mountain hideaway.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- HONEYFUND -->
+    <section id="honeyfund" class="section reveal">
+      <div class="section-inner">
+        <div class="section-header center">
+          <h2>Honeyfund</h2>
+          <p>
+            Instead of traditional gifts, we’re dreaming up a surprise honeymoon
+            that feels very “us.”
+          </p>
+        </div>
+
+        <div class="two-col">
+          <article class="card">
+            <h3>Help Send Us Off</h3>
+            <p>
+              After the wedding, we’re sneaking away somewhere that mixes
+              adventure, beautiful views, and slow mornings with really good
+              coffee.
+            </p>
+            <p>
+              If you’d like to be part of that story, you can contribute to our
+              Honeyfund.
+            </p>
+            <a
+              href="https://www.honeyfund.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn primary"
+            >
+              Visit Our Honeyfund
+            </a>
+            <p class="soft">
+              We’ll share photos and stories when we’re back and finally reveal
+              where we went. 😉
+            </p>
+          </article>
+
+          <aside class="info-card">
+            <h3>A Little Hint</h3>
+            <p>
+              Think mountains. Think cozy. Think “we packed both hiking shoes
+              and something a little dressy.”
+            </p>
+            <p class="soft">That’s all we’re saying for now.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- PHOTOS -->
+    <section id="photos" class="section section-soft reveal">
+      <div class="section-inner">
+        <div class="section-header center">
+          <h2>Photos</h2>
+          <p>
+            We’ll add real photos as we get closer. Until then, imagine mountain
+            views, warm light, and a lot of joy.
+          </p>
+        </div>
         <div class="photo-grid">
           <div class="photo-card">
             <div class="photo-placeholder">Photo of us here</div>
@@ -293,55 +315,19 @@
       </div>
     </section>
 
-    <!-- Honeyfund (Honeymoon Hint) -->
-    <section id="honeyfund" class="section reveal">
-      <div class="section-inner two-col">
-        <div>
-          <h2>Honeyfund</h2>
-          <p>
-            After the wedding, we’re sneaking away for a surprise honeymoon —
-            somewhere that mixes adventure, beautiful views, and slow mornings
-            with good coffee.
-          </p>
-          <p>
-            If you’d like to help send us off, we’ve created a Honeyfund in
-            place of traditional gifts.
-          </p>
-          <a
-            href="https://www.honeyfund.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn primary"
-          >
-            Visit Our Honeyfund
-          </a>
-          <p class="soft">
-            We’ll share photos and stories when we’re back… destination revealed
-            then. 😉
-          </p>
-        </div>
-        <aside class="info-card">
-          <h3>A Little Hint</h3>
-          <p>
-            Think mountains. Think cozy. Think “we packed both hiking shoes and
-            something a little dressy.”
-          </p>
-          <p class="soft">But that’s all we’re saying for now.</p>
-        </aside>
-      </div>
-    </section>
-
-    <!-- Contact -->
+    <!-- CONTACT -->
     <section id="contact" class="section reveal">
       <div class="section-inner">
-        <h2>Contact</h2>
-        <p>
-          For questions about the weekend, travel, or logistics, please reach
-          out to the couple or a member of the wedding party.
-        </p>
-        <p class="soft">
-          Contact details will be added here closer to the date.
-        </p>
+        <div class="section-header center">
+          <h2>Contact</h2>
+          <p>
+            Questions about the weekend, travel, or details? Contact the couple
+            or a member of the wedding party.
+          </p>
+          <p class="soft">
+            Specific contact info will be added here closer to the wedding date.
+          </p>
+        </div>
       </div>
     </section>
 
@@ -349,7 +335,7 @@
       <p>© 2026 Asher &amp; Lindsey</p>
     </footer>
 
-    <!-- Wedding Party Modal -->
+    <!-- WEDDING PARTY MODAL -->
     <div id="wp-modal" class="modal">
       <div class="modal-content">
         <button class="modal-close" aria-label="Close Wedding Party access">
