@@ -1,4 +1,5 @@
-const WP_CODE = "McKenna"; // or whatever code you want
+const WP_CODE = "McKenna"; // password for wedding party
+
 document.addEventListener("DOMContentLoaded", () => {
   setupSmoothScroll();
   setupRevealAnimations();
@@ -48,11 +49,6 @@ function setupRevealAnimations() {
 }
 
 /* Wedding Party modal + unlock logic */
-document.addEventListener("DOMContentLoaded", () => {
-  setupWeddingPartyModal();
-  // (plus whatever else you already call here: smooth scroll, nav, etc.)
-});
-
 function setupWeddingPartyModal() {
   const openBtn = document.getElementById("wp-open");
   const modal = document.getElementById("wp-modal");
@@ -110,6 +106,7 @@ function setupWeddingPartyModal() {
     }
   }
 }
+
 /* Mobile nav */
 function setupMobileNav() {
   const toggle = document.querySelector(".nav-toggle");

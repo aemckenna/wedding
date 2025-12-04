@@ -442,8 +442,27 @@ h2 {
 }
 
 /* Wedding party-only rows hidden by default */
+/* hide wedding party stuff by default */
 .wp-only {
   display: none;
+}
+
+.wp-day-only {
+  display: none;
+}
+
+/* smaller tag shown inline for "Bridal Party to Peri" */
+.wp-only-inline {
+  display: none;
+}
+
+/* inline link styling (maps links) */
+.inline-link {
+  display: inline-block;
+  margin-top: 4px;
+  font-size: 0.85rem;
+  color: var(--accent);
+  text-decoration: underline;
 }
 
 .wp-schedule {
