@@ -1,5 +1,4 @@
-const WP_CODE = "LP2026"; // wedding party access code
-
+const WP_CODE = "McKenna"; // or whatever code you want
 document.addEventListener("DOMContentLoaded", () => {
   setupSmoothScroll();
   setupRevealAnimations();
