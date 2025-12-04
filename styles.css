@@ -443,7 +443,8 @@ h2 {
 
 /* Wedding party-only rows hidden by default */
 /* hide wedding party stuff by default */
-.wp-only {
+/* Wedding party-only rows hidden by default */
+.timeline li.wp-only {
   display: none;
 }
 
