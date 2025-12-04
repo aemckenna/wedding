@@ -464,6 +464,8 @@ h2 {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  height: 300px;
+
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -488,7 +490,12 @@ h2 {
   font-style: italic;
   color: #5f5746;
 }
-
+.photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+}
 .caption {
   font-size: 0.9rem;
   color: var(--muted);
