@@ -82,8 +82,8 @@ function setupWeddingPartyModal() {
 
   function handleCode() {
     if (input.value === WP_CODE) {
-      document.querySelectorAll(".wp-only").forEach((el) => {
-        el.style.display = "grid";
+      document.querySelectorAll(".wp-schedule").forEach((el) => {
+        el.style.display = "block";
       });
       errorMsg.classList.add("hidden");
       closeModal();
