@@ -446,6 +446,10 @@ h2 {
   display: none;
 }
 
+.wp-schedule {
+  display: none;
+}
+
 /* ---------------------
    Photos
 ---------------------- */
