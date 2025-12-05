@@ -856,3 +856,40 @@ h2 {
     display: none;
   }
 }
+
+/* make the rehearsal dinner card narrower and centered */
+.narrow-card {
+  max-width: 720px; /* perfect width for Google Forms */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* form embed container */
+.form-embed-wrap {
+  margin-top: 14px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  background: #ffffff;
+}
+
+/* responsive iframe */
+.form-embed {
+  width: 100%;
+  min-height: 900px; /* increased to avoid scrollbars */
+  border: none;
+}
+
+/* fallback text */
+.form-fallback {
+  margin-top: 12px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* mobile support */
+@media (max-width: 600px) {
+  .form-embed {
+    min-height: 1050px; /* gives mobile extra height */
+  }
+}
