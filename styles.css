@@ -307,7 +307,7 @@ h2 {
 .btn.primary {
   background: var(--accent);
   color: #ffffff;
-  box-shadow: 0 12px 30px rgba(4, 109, 94, 0.35);
+  box-shadow: 0 12px 30px rgba(40, 77, 48, 0.35);
 }
 
 .btn.primary:hover {
@@ -366,7 +366,7 @@ h2 {
   inset: 0;
   background: radial-gradient(
     circle at top right,
-    rgba(4, 109, 94, 0.04),
+    rgba(33, 85, 39, 0.04),
     transparent 60%
   );
   pointer-events: none;
