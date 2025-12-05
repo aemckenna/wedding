@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setupRevealAnimations();
   setupWeddingPartyModal();
   setupMobileNav();
+  setupPhotoCarousel();
 });
 
 /* Smooth scrolling for nav + hero buttons */
@@ -122,4 +123,118 @@ function setupMobileNav() {
       navLinks.classList.remove("open");
     });
   });
+}
+
+function setupPhotoCarousel() {
+  const track = document.querySelector(".photo-track");
+  if (!track) return;
+
+  const slides = Array.from(track.querySelectorAll(".photo-slide"));
+  const dots = Array.from(document.querySelectorAll(".carousel-dot"));
+
+  if (!slides.length) return;
+
+  let index = 0;
+  let autoTimer = null;
+
+  // ----- core slide update -----
+  function updateSlides() {
+    slides.forEach((slide, i) => {
+      slide.classList.remove("is-active", "is-prev", "is-next");
+      if (i === index) {
+        slide.classList.add("is-active");
+      } else if (i === (index - 1 + slides.length) % slides.length) {
+        slide.classList.add("is-prev");
+      } else if (i === (index + 1) % slides.length) {
+        slide.classList.add("is-next");
+      }
+    });
+
+    dots.forEach((dot, i) => {
+      dot.classList.toggle("is-active", i === index);
+    });
+  }
+  dots.forEach((dot, i) => {
+    dot.addEventListener("click", () => {
+      goTo(i);
+      startAuto();
+    });
+  });
+  function goTo(newIndex) {
+    index = (newIndex + slides.length) % slides.length;
+    updateSlides();
+  }
+
+  function next() {
+    goTo(index + 1);
+  }
+
+  function prev() {
+    goTo(index - 1);
+  }
+
+  function startAuto() {
+    if (autoTimer) clearInterval(autoTimer);
+    autoTimer = setInterval(next, 5000);
+  }
+
+  // ----- dots: click to jump -----
+  dots.forEach((dot, i) => {
+    dot.addEventListener("click", () => {
+      goTo(i);
+      startAuto();
+    });
+  });
+
+  // ----- drag / swipe to move slides -----
+  let isDragging = false;
+  let startX = 0;
+  let currentX = 0;
+
+  function getClientX(e) {
+    if (e.touches && e.touches.length) return e.touches[0].clientX;
+    return e.clientX;
+  }
+
+  function handleDown(e) {
+    isDragging = true;
+    startX = getClientX(e);
+    currentX = startX;
+  }
+
+  function handleMove(e) {
+    if (!isDragging) return;
+    currentX = getClientX(e);
+  }
+
+  function handleUp() {
+    if (!isDragging) return;
+    const dx = currentX - startX;
+
+    // swipe threshold in pixels
+    if (Math.abs(dx) > 40) {
+      if (dx < 0) {
+        next();
+      } else {
+        prev();
+      }
+      startAuto();
+    }
+
+    isDragging = false;
+  }
+
+  // mouse
+  track.addEventListener("mousedown", handleDown);
+  window.addEventListener("mousemove", handleMove);
+  window.addEventListener("mouseup", handleUp);
+
+  // touch
+  track.addEventListener("touchstart", handleDown, { passive: true });
+  track.addEventListener("touchmove", handleMove, { passive: true });
+  track.addEventListener("touchend", handleUp);
+
+  // ----- init -----
+  updateSlides();
+  startAuto();
 }
