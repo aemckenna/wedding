@@ -417,50 +417,23 @@
         <div class="section-header center">
           <h2>Photos</h2>
           <p>
-            We'll add real photos as we get closer. Until then, imagine mountain
-            views, warm light, and a lot of joy.
+            A few moments that feel like us. Swipe or click through for a little
+            preview.
           </p>
-          <div class="photo-grid">
-            <!-- Portrait / Featured -->
-            <div class="photo-card">
-              <img
-                src="bridgephoto.png"
-                class="photo-img"
-                alt="Portrait of Asher & Lindsey"
-              />
-              <p class="caption">A favorite portrait of us.</p>
-            </div>
+        </div>
 
-            <!-- Engagement / Running photo -->
-            <div class="photo-card">
-              <img
-                src="running.png"
-                class="photo-img"
-                alt="Asher & Lindsey running"
-              />
-              <p class="caption">A moment that feels like “us.”</p>
-            </div>
+        <div class="photo-carousel">
+          <button class="carousel-btn prev" aria-label="Previous photo">
+            ‹
+          </button>
 
-            <!-- Peri Social House (venue) -->
-            <div class="photo-card">
-              <img
-                src="perisocialhouse.png"
-                class="photo-img"
-                alt="Peri Social House wedding venue"
-              />
-              <p class="caption">A glimpse of Peri Social House.</p>
-            </div>
-
-            <!-- Cambria (room block hotel) -->
-            <div class="photo-card">
-              <img
-                src="cambria.png"
-                class="photo-img"
-                alt="Cambria Hotel Asheville"
-              />
-              <p class="caption">Hotel for the room block.</p>
-            </div>
+          <div class="carousel-viewport">
+            <div class="photo-track" id="photo-track"></div>
           </div>
+
+          <button class="carousel-btn next" aria-label="Next photo">›</button>
+
+          <div class="carousel-dots" id="carousel-dots"></div>
         </div>
       </div>
     </section>
